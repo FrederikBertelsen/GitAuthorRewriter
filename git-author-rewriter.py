@@ -50,7 +50,7 @@ def clone_repositories(username, token, repos):
         print(f"Cloning repositories... ({i}/{total_repos})", end="\r")
         if os.path.isdir(repo):
             continue
-        clone_url = f"https://{username}:{token}@FB.github.com/{username}/{repo}.git"
+        clone_url = f"https://{username}:{token}@github.com/{username}/{repo}.git"
         result = subprocess.run(["git", "clone", "-q", clone_url, repo])
         if result.returncode != 0:
             continue
